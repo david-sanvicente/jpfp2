@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getAllCampuses } from "../reducers/campusesReducer";
+import { getAllCampuses, deleteCampus } from "../reducers/campusesReducer";
 import Campus from "./Campus";
 import NewCampusForm from "./NewCampusForm";
 
@@ -15,7 +15,7 @@ class AllCampuses extends Component {
         {this.props.campuses.map(campus => {
           return (
             <div key={campus.id}>
-              <Campus campus={campus} />
+              <Campus campus={campus} deleteCampus={this.props.deleteCampus} />
             </div>
           );
         })}
@@ -33,7 +33,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    getAllCampuses: () => dispatch(getAllCampuses())
+    getAllCampuses: () => dispatch(getAllCampuses()),
+    deleteCampus: campusId => dispatch(deleteCampus(campusId))
   };
 };
 

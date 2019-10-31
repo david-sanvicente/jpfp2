@@ -10,6 +10,14 @@ const Campus = props => {
           <img src={props.campus.imageUrl} />
         </Link>
       </div>
+      <div className="delete button">
+        <button
+          className="delete campus"
+          onClick={() => props.deleteCampus(props.campus.id)}
+        >
+          Delete Campus
+        </button>
+      </div>
     </div>
   );
 };

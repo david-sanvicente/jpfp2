@@ -32,7 +32,6 @@ export const createCampusThunk = campus => async dispatch => {
 };
 
 export const deleteCampus = campusId => async dispatch => {
-  // console.log(campusId);
   await axios.delete(`/api/campuses/${campusId}`);
   const { data } = await axios.get("/api/campuses");
   dispatch(gotAllCampuses(data));
