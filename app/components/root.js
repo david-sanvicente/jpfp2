@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
 import AllCampuses from "./AllCampuses";
 import AllStudents from "./AllStudents";
+import SingleCampus from "./SingleCampus";
 
 const Root = () => {
   return (
@@ -24,6 +25,7 @@ const Root = () => {
           <p>This seems like a nice place to get started with some Routes!</p>
         </main>
         <Switch>
+          <Route path="/campuses/:id" component={SingleCampus} />
           <Route path="/campuses" component={AllCampuses} />
           <Route path="/students" component={AllStudents} />
         </Switch>
