@@ -28,4 +28,43 @@ router.get("/:id", async (req, res, next) => {
   }
 });
 
+router.post("/", async (req, res, next) => {
+  try {
+    // Campuses.create(req.body).then(campus => res.send(campus));
+    const campus = await Campuses.create(req.body);
+    res.send(campus);
+  } catch (err) {
+    next(err);
+  }
+});
+
+router.delete("/:id", async (req, res, next) => {
+  try {
+    Campuses.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(() => {
+      res.sendStatus(204);
+    });
+  } catch (err) {
+    next(err);
+  }
+});
+
+router.put("/:id", async (req, res, next) => {
+  try {
+    Campuses.update(req.body, {
+      where: {
+        id: req.params.id
+      },
+      returning: true
+    }).then(() => {
+      res.sendStatus(204);
+    });
+  } catch (err) {
+    next(err);
+  }
+});
+
 module.exports = router;

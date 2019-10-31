@@ -28,4 +28,41 @@ router.get("/:id", async (req, res, next) => {
   }
 });
 
+router.post("/", async (req, res, next) => {
+  try {
+    Students.create(req.body).then(student => res.json(student));
+  } catch (err) {
+    next(err);
+  }
+});
+
+router.delete("/:id", async (req, res, next) => {
+  try {
+    Students.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(() => {
+      res.sendStatus(204);
+    });
+  } catch (err) {
+    next(err);
+  }
+});
+
+router.put("/:id", async (req, res, next) => {
+  try {
+    Students.update(req.body, {
+      where: {
+        id: req.params.id
+      },
+      returning: true
+    }).then(() => {
+      res.sendStatus(204);
+    });
+  } catch (err) {
+    next(err);
+  }
+});
+
 module.exports = router;

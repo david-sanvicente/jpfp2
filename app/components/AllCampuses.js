@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getAllCampuses } from "../reducers/campusesReducer";
 import Campus from "./Campus";
+import NewCampusForm from "./NewCampusForm";
 
 class AllCampuses extends Component {
   componentDidMount() {
@@ -18,6 +19,7 @@ class AllCampuses extends Component {
             </div>
           );
         })}
+        <NewCampusForm />
       </div>
     );
   }

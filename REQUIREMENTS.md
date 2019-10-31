@@ -55,14 +55,14 @@ Congrats! You have completed your first vertical slice! Make sure to `commit -m 
 - [x] Display the appropriate campus's info when the url matches `/campuses/:campusId`
 - [x] Clicking on a campus from the all-campuses view should navigate to show that campus in the single-campus view
 
-- [ ] Write a component to display a single student with the following information:
-  - [ ] The student's full name, email, image, and gpa
-  - [ ] The name of their campus (or a helpful message if they don't have one)
-- [ ] Display the appropriate student when the url matches `/students/:studentId`
-- [ ] Clicking on a student from the all-students view should navigate to show that student in the single-student view
+- [x] Write a component to display a single student with the following information:
+  - [x] The student's full name, email, image, and gpa
+  - [x] The name of their campus (or a helpful message if they don't have one)
+- [x] Display the appropriate student when the url matches `/students/:studentId`
+- [x] Clicking on a student from the all-students view should navigate to show that student in the single-student view
 
-- [ ] Clicking on the name of a student in the single-campus view should navigate to show that student in the single-student view
-- [ ] Clicking on the name of a campus in the single-student view should navigate to show that campus in the single-campus view
+- [x] Clicking on the name of a student in the single-campus view should navigate to show that student in the single-student view
+- [x] Clicking on the name of a campus in the single-student view should navigate to show that campus in the single-campus view
 
 Congrats! You have completed your second vertical slice! Make sure to `commit -m "Feature: Get Single Campus and Student"` before moving on (see `RUBRIC.md` - points are awarded/deducted for a proper git workflow)!
 
@@ -74,8 +74,8 @@ Congrats! You have completed your second vertical slice! Make sure to `commit -m
 
 #### Backend
 
-- [ ] Write a route to add a new campus
-- [ ] Write a route to add a new student
+- [x] Write a route to add a new campus
+- [x] Write a route to add a new student
 
 #### Frontend
 
