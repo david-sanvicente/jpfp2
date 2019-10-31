@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { getSingleStudent } from "../reducers/singleStudentReducer";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
 class SingleStudent extends Component {
   constructor(props) {
@@ -25,9 +26,17 @@ class SingleStudent extends Component {
           Enrolled Campus:
           <p>
             {this.props.singleStudent.campus &&
-            this.props.singleStudent.campus.name
-              ? this.props.singleStudent.campus.name
-              : "Student not presently enrolled."}
+            this.props.singleStudent.campus.name ? (
+              <p>
+                {
+                  <Link to={`/campuses/${this.props.singleStudent.campus.id}`}>
+                    {this.props.singleStudent.campus.name}
+                  </Link>
+                }
+              </p>
+            ) : (
+              "Student not presently enrolled."
+            )}
           </p>
         </div>
       )

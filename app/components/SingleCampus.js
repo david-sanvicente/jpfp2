@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { getSingleCampus } from "../reducers/singleCampusReducer";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
 class SingleCampus extends Component {
   constructor(props) {
@@ -25,8 +26,10 @@ class SingleCampus extends Component {
               this.props.singleCampus.students.map(student => {
                 return (
                   <ul key={student.id}>
-                    {`${student.firstName} ${student.lastName}`}
-                    <img src={student.imageUrl} />
+                    <Link to={`/students/${student.id}`}>
+                      {`${student.firstName} ${student.lastName}`}
+                      <img src={student.imageUrl} />
+                    </Link>
                   </ul>
                 );
               })}
