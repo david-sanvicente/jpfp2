@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { getSingleStudent } from "../reducers/singleStudentReducer";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import UpdateStudentForm from "./UpdateStudentForm";
 
 class SingleStudent extends Component {
   constructor(props) {
@@ -13,6 +14,7 @@ class SingleStudent extends Component {
   }
 
   render() {
+    console.log(this.props.singleStudent.id);
     return (
       Object.keys(this.props.singleStudent) && (
         <div>
@@ -37,6 +39,7 @@ class SingleStudent extends Component {
             ) : (
               "Student not presently enrolled."
             )}
+            <UpdateStudentForm studentId={this.props.singleStudent.id} />
           </p>
         </div>
       )

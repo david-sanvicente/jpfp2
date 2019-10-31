@@ -17,6 +17,12 @@ export const getSingleStudent = id => async dispatch => {
   dispatch(gotSingleStudent(data));
 };
 
+export const updateStudentThunk = (studentId, student) => async dispatch => {
+  await axios.put(`/api/students/${studentId}`, student);
+  const { data } = await axios.get(`/api/students/${studentId}`);
+  dispatch(gotSingleStudent(data));
+};
+
 // reducer
 const singleStudentReducer = (state = [], action) => {
   switch (action.type) {

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { getSingleCampus } from "../reducers/singleCampusReducer";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import UpdateCampusForm from "./UpdateCampusForm";
 
 class SingleCampus extends Component {
   constructor(props) {
@@ -34,6 +35,7 @@ class SingleCampus extends Component {
                 );
               })}
           </ul>
+          <UpdateCampusForm campusId={this.props.singleCampus.id} />
         </div>
       )
     );

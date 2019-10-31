@@ -17,6 +17,12 @@ export const getSingleCampus = id => async dispatch => {
   dispatch(gotSingleCampus(data));
 };
 
+export const updateCampusThunk = (campusId, campus) => async dispatch => {
+  await axios.put(`/api/campuses/${campusId}`, campus);
+  const { data } = await axios.get(`/api/campuses/${campusId}`);
+  dispatch(gotSingleCampus(data));
+};
+
 // reducer
 const singleCampusReducer = (state = [], action) => {
   switch (action.type) {
