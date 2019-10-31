@@ -15,7 +15,7 @@ const Campus = props => {
           className="delete campus"
           onClick={() => props.deleteCampus(props.campus.id)}
         >
-          Delete Campus
+          X
         </button>
       </div>
     </div>

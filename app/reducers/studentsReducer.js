@@ -31,6 +31,12 @@ export const createStudentThunk = student => async dispatch => {
   dispatch(createStudent(data));
 };
 
+export const deleteStudent = studentId => async dispatch => {
+  await axios.delete(`/api/students/${studentId}`);
+  const { data } = await axios.get("/api/students");
+  dispatch(gotAllStudents(data));
+};
+
 // reducer
 const studentsReducer = (students = [], action) => {
   switch (action.type) {
