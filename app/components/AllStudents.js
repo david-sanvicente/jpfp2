@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { getAllStudents } from "../reducers/studentsReducer";
 import Student from "./Student";
 import { Link } from "react-router-dom";
-import NewStudentForm from "./NewCampusForm";
+import NewStudentForm from "./NewStudentForm";
 
 class AllStudents extends Component {
   componentDidMount() {

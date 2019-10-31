@@ -25,8 +25,8 @@ const Root = () => {
           <p>This seems like a nice place to get started with some Routes!</p>
         </main>
         <Switch>
-          <Route path="/campuses/:id" component={SingleCampus} />
           <Route path="/students/:id" component={SingleStudent} />
+          <Route path="/campuses/:id" component={SingleCampus} />
           <Route path="/campuses" component={AllCampuses} />
           <Route path="/students" component={AllStudents} />
           <Route path="/newstudent" component={NewStudentForm} />

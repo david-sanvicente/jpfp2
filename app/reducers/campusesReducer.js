@@ -31,6 +31,13 @@ export const createCampusThunk = campus => async dispatch => {
   dispatch(createCampus(data));
 };
 
+export const deleteCampus = campusId => async dispatch => {
+  // console.log(campusId);
+  await axios.delete(`/api/campuses/${campusId}`);
+  const { data } = await axios.get("/api/campuses");
+  dispatch(gotAllCampuses(data));
+};
+
 // reducer
 const campusesReducer = (campuses = [], action) => {
   switch (action.type) {

@@ -1,12 +1,12 @@
 import React from "react";
-import axios from "axios";
+import { connect } from "react-redux";
+import { createStudentThunk } from "../reducers/studentsReducer";
 
-class Form extends React.Component {
+class NewStudentForm extends React.Component {
   constructor() {
     super();
 
     (this.state = {
-      // id: "",
       firstName: "",
       lastName: "",
       email: "",
@@ -21,9 +21,9 @@ class Form extends React.Component {
     event.preventDefault();
 
     try {
-      await axios.post("/api/students", this.state);
-    } catch (err) {
-      console.error(err);
+      this.props.createStudentThunk(this.state);
+    } catch (error) {
+      console.error(error);
     }
   }
 
@@ -85,4 +85,13 @@ class Form extends React.Component {
   }
 }
 
-export default Form;
+const mapDispatchToProps = dispatch => {
+  return {
+    createStudentThunk: student => dispatch(createStudentThunk(student))
+  };
+};
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(NewStudentForm);
