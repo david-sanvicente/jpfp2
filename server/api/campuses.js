@@ -14,4 +14,17 @@ router.get("/", async (req, res, next) => {
   }
 });
 
+router.get("/:id", async (req, res, next) => {
+  try {
+    Campuses.findById(req.params.id, {
+      include: [{ model: Students }]
+    }).then(campus => {
+      if (!campus) return res.sendStatus(404);
+      res.send(campus);
+    });
+  } catch (error) {
+    next(error);
+  }
+});
+
 module.exports = router;
