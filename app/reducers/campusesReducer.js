@@ -3,7 +3,7 @@ import axios from "axios";
 
 // action types
 const GOT_ALL_CAMPUSES = "GOT_ALL_CAMPUSES";
-const CREATE_CAMPUS = "CREATE_CAMPUS";
+// const CREATE_CAMPUS = "CREATE_CAMPUS";
 
 // action creators
 const gotAllCampuses = campuses => {
@@ -24,8 +24,8 @@ const campusesReducer = (campuses = [], action) => {
   switch (action.type) {
     case GOT_ALL_CAMPUSES:
       return action.campuses;
-    case CREATE_CAMPUS:
-      return [...campuses, action.campus];
+    // case CREATE_CAMPUS:
+    //   return [...campuses, action.campus];
     default:
       return campuses;
   }

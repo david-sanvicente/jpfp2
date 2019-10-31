@@ -54,7 +54,8 @@ const students = [
     firstName: "R2D2",
     lastName: "Droid",
     email: "beepboop@alliance.com",
-    imageUrl: "https://en.wikipedia.org/wiki/File:R2-D2_Droid.png",
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/en/9/9b/Luke_Skywalker.png",
     gpa: 4.0
   },
   {

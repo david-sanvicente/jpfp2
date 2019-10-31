@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
 import AllCampuses from "./AllCampuses";
+import AllStudents from "./AllStudents";
 
 const Root = () => {
   return (
@@ -11,10 +12,10 @@ const Root = () => {
           <Link style={{ color: "white" }} to="/campuses">
             Campuses
           </Link>
-          {/* <Link style={{ color: 'white' }} to='/campuses'>
+          <Link style={{ color: "white" }} to="/students">
             Students
           </Link>
-          <Link style={{ color: 'white' }} to='/campuses'>
+          {/* <Link style={{ color: "white" }} to="/home">
             Home
           </Link> */}
         </nav>
@@ -24,6 +25,7 @@ const Root = () => {
         </main>
         <Switch>
           <Route path="/campuses" component={AllCampuses} />
+          <Route path="/students" component={AllStudents} />
         </Switch>
       </div>
     </Router>
