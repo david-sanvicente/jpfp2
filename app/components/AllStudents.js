@@ -16,10 +16,10 @@ class AllStudents extends Component {
         {this.props.students.map(student => {
           return (
             <div key={student.id}>
-              {/* <Link to={`/students/${student.id}`}>
+              <Link to={`/students/${student.id}`}>
                 <Student student={student} />
-              </Link> */}
-              <Student student={student} />
+              </Link>
+              {/* <Student student={student} /> */}
             </div>
           );
         })}

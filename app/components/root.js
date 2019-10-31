@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
 import AllCampuses from "./AllCampuses";
 import AllStudents from "./AllStudents";
 import SingleCampus from "./SingleCampus";
+import SingleStudent from "./SingleStudent";
 
 const Root = () => {
   return (
@@ -26,6 +27,7 @@ const Root = () => {
         </main>
         <Switch>
           <Route path="/campuses/:id" component={SingleCampus} />
+          <Route path="/students/:id" component={SingleStudent} />
           <Route path="/campuses" component={AllCampuses} />
           <Route path="/students" component={AllStudents} />
         </Switch>
